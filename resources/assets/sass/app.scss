@@ -1,0 +1,139 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+$colorMast: #3097d1;
+$colorMast2: #1c73a5;
+$colorMast3: rgba(255, 255, 255, 0.8);
+
+body {
+    padding-top: 50px;
+}
+
+.main {
+    > .container {
+        margin-top: 30px !important;
+    }
+}
+
+.navbar-mast {
+    background-color: $colorMast2;
+    border-color: $colorMast;
+}
+
+.navbar-mast .navbar-brand {
+    color: $colorMast3;
+}
+
+.navbar-mast .navbar-brand:hover, .navbar-mast .navbar-brand:focus {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar-mast .navbar-text {
+    color: $colorMast3;
+}
+
+.navbar-mast .navbar-nav > li > a {
+    color: $colorMast3;
+}
+
+.navbar-mast .navbar-nav > li > a:hover, .navbar-mast .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar-mast .navbar-nav > .active > a, .navbar-mast .navbar-nav > .active > a:hover, .navbar-mast .navbar-nav > .active > a:focus {
+    //background-color: $colorMast;
+    color: #fff;
+}
+
+.navbar-mast .navbar-nav > .disabled > a, .navbar-mast .navbar-nav > .disabled > a:hover, .navbar-mast .navbar-nav > .disabled > a:focus {
+    background-color: transparent;
+    color: #444;
+}
+
+.navbar-mast .navbar-toggle {
+    border-color: #333;
+}
+
+.navbar-mast .navbar-toggle:hover, .navbar-mast .navbar-toggle:focus {
+    background-color: #333;
+}
+
+.navbar-mast .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-mast .navbar-collapse, .navbar-mast .navbar-form {
+    border-color: #101010;
+}
+
+.navbar-mast .navbar-nav > .open > a, .navbar-mast .navbar-nav > .open > a:hover, .navbar-mast .navbar-nav > .open > a:focus {
+    //background-color: $colorMast;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .navbar-mast .navbar-nav .open .dropdown-menu > .dropdown-header {
+        border-color: $colorMast;
+    }
+   
+    .navbar-mast .navbar-nav .open .dropdown-menu .divider {
+        background-color: $colorMast;
+    }
+   
+    .navbar-mast .navbar-nav .open .dropdown-menu > li > a {
+        color: $colorMast3;
+    }
+    
+    .navbar-mast .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-mast .navbar-nav .open .dropdown-menu > li > a:focus {
+        background-color: transparent;
+        color: #fff;
+    }
+   
+    .navbar-mast .navbar-nav .open .dropdown-menu > .active > a, .navbar-mast .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-mast .navbar-nav .open .dropdown-menu > .active > a:focus {
+        //background-color: $colorMast;
+        color: #fff;
+    }
+   
+    .navbar-mast .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-mast .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-mast .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        background-color: transparent;
+        color: #444;
+    }
+}
+
+.navbar-mast .navbar-link {
+    color: $colorMast3;
+}
+
+.navbar-mast .navbar-link:hover {
+    color: #fff;
+}
+
+.navbar-mast .btn-link {
+    color: $colorMast3;
+}
+
+.navbar-mast .btn-link:hover, .navbar-mast .btn-link:focus {
+    color: #fff;
+}
+
+.navbar-mast .btn-link[disabled]:hover, .navbar-mast .btn-link[disabled]:focus, fieldset[disabled] .navbar-mast .btn-link:hover, fieldset[disabled] .navbar-mast .btn-link:focus {
+    color: #444;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+}
+
+.col-10-10 {
+    width: 100px !important;
+}
+
+.grade-0::before, .grade-1:nth-child(n+2)::before, .grade-2:nth-child(n+3)::before, .grade-3:nth-child(n+4)::before, .grade-4:nth-child(n+5)::before {
+  content: "";
+}
+
+.no-border-right {
+  border-right: 0;
+}

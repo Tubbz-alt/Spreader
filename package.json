@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "laravel-elixir": "^3.0.0",
+    "bootstrap-sass": "^3.0.0",
+    "bootstrap-datepicker": "latest",
+    "font-awesome": "latest",
+    "jquery": "latest",
+    "at.js": "https://github.com/ichord/At.js",
+    "jquery.caret": "latest",
+    "react": "^0.13.0",
+    "react-highcharts": "^3.0.0"
+  }
+}
