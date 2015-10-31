@@ -1,7 +1,4 @@
 /storage
-/public/css
-/public/js
-/public/fonts
 /vendor
 /node_modules
 Homestead.yaml
