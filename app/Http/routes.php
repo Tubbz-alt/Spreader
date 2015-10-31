@@ -26,7 +26,7 @@ Route::group(['prefix' => 'analytics', 'namespace' => 'Analytics', 'middleware' 
     Route:;get('dashboard/hightcharts', 'DashboardController@getHightChartsConfig');
 });
 
-Route::group(['prefix' => 'internal', 'namespace' => 'internal', 'middleware' => 'auth.admin'], function() {
+Route::group(['prefix' => 'internal', 'namespace' => 'Internal', 'middleware' => 'auth.admin'], function() {
     Route::get('/', 'DashboardController@Index');
     Route::get('dashboard', 'DashboardController@Index');
     Route::get('dashboard/index', 'DashboardController@Index');
