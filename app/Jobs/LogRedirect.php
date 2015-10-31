@@ -38,7 +38,7 @@ class LogRedirect extends Job implements SelfHandling, ShouldQueue
             'project_id' => $log->project_id,
             'activity_id' => $log->activity_id,
             'task_id' => $log->task_id,
-            'request_udid' => MD5("$log->remote_addr:$log->remote_port#$log->user_agent"), // udid
+            'request_udid' => MD5("$log->remote_addr#$log->user_agent"), // udid
             'requested_at' => $log->created_at
         ];
 

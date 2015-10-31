@@ -15,7 +15,7 @@ class DispatchController extends Controller
             'activity_id' => $activityId,
             'task_id' => $taskId,
             'request_uri' => $_SERVER['REQUEST_URI'],
-            'remote_addr' => $_SERVER['REMOTE_ADDR'],
+            'remote_addr' => \Request::getClientIp(),
             'remote_port' => $_SERVER['REMOTE_PORT'],
             'user_agent' => $_SERVER['HTTP_USER_AGENT'],
             'created_at' => date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME'])
