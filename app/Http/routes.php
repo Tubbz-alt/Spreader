@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', 'Auth\AuthController@getLogin');
+Route::get('/', function() {
+    if ($user = \Request::user()) {
+        switch ($user->role) {
+            case 1: return \Redirect::to('internal');
+            case 2: return \Redirect::to('analytics');
+            case 3: return \Redirect::to('auth/logout');
+        }
+    } else {
+        return \Redirect::to('auth/login');
+    }
+});
 
 Route::get('redirect/{project}/{activity}/{task?}', 'DispatchController@redirect');
 
