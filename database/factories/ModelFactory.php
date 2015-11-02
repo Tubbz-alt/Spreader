@@ -27,7 +27,7 @@ $factory->define(App\PRequestLog::class, function (Faker\Generator $faker) {
         'task_id' => rand(1, 100),
         'term_id' => rand(1, 10),
         'amigo_id' => rand(1, 10), 
-        'request_udid' => md5(rand(1, 100)),
+        'request_udid' => md5(rand(1, 1500)),
         'requested_at' => date('Y-m-d H:i:s', time() - 30*3600*24 + rand(1, 3600*24*30))
     ];
 });
