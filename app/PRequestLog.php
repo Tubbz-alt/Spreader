@@ -67,12 +67,10 @@ class PRequestLog extends Model
             ], [
                 'name' => 'Pv',
                 'type' => 'spline',
-                'dashStyle' => 'shortdot',
                 'data' => $pvData 
             ], [
                 'name' => 'Uv',
                 'type' => 'spline',
-                'dashStyle' => 'shortdot',
                 'data' => $uvData 
             ]]
         ];

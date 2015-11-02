@@ -19,3 +19,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\PRequestLog::class, function (Faker\Generator $faker) {
+    return [
+        'project_id' => 1,
+        'activity_id' => rand(1, 10),
+        'task_id' => rand(1, 100),
+        'term_id' => rand(1, 10),
+        'amigo_id' => rand(1, 10), 
+        'request_udid' => md5(rand(1, 100)),
+        'requested_at' => date('Y-m-d H:i:s', time() - 30*3600*24 + rand(1, 3600*24*30))
+    ];
+});
