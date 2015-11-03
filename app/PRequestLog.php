@@ -29,11 +29,15 @@ class PRequestLog extends Model
 
         $pvData = $uvData = $putData = [];
         $pvGets = \DB::select("SELECT count(request_udid) as c, substr(requested_at, 1, $offset) as requested_at FROM prequest_logs WHERE $scopeWhere AND requested_at >= :start_day AND requested_at <= :end_day GROUP BY substr(requested_at, 1, $offset)", ['scope_id' => $scopeId, 'start_day' => $periodStart, 'end_day' => "$periodEnd 24:59:59"]);
+        $pvs = 0;
         foreach ($pvGets as $pv) {
             $pvData[] = [(strtotime($pv->requested_at.$sttSuffix) + 8*3600)*1000, (int)$pv->c];
+            $pvs += $pv->c;
         }
 
         $uvGets = \DB::select("SELECT count(DISTINCT request_udid) as c, substr(requested_at, 1, $offset) as requested_at FROM prequest_logs WHERE $scopeWhere AND requested_at >= :start_day AND requested_at <= :end_day GROUP BY substr(requested_at, 1, $offset)", ['scope_id' => $scopeId, 'start_day' => $periodStart, 'end_day' => "$periodEnd 24:59:59"]);
+        $uvsGet = \DB::select("SELECT count(DISTINCT request_udid) as c FROM prequest_logs WHERE $scopeWhere AND requested_at >= :start_day AND requested_at <= :end_day", ['scope_id' => $scopeId, 'start_day' => $periodStart, 'end_day' => "$periodEnd 24:59:59"]);
+        $uvs = $uvsGet[0]->c;
         foreach ($uvGets as $uv) {
             $uvData[] = [(strtotime($uv->requested_at.$sttSuffix) + 8*3600)*1000, (int)$uv->c];
         }
@@ -53,6 +57,8 @@ class PRequestLog extends Model
         }
 
         $config = [
+            'pvs' => $pvs,
+            'uvs' => $uvs,
             'credits' => ['enabled' => false],
             'chart' => ['zoomType' => 'xy'],
             'title' => ['text' => $project->name],

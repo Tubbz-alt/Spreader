@@ -39,6 +39,7 @@ Spreader.Dashboard = {
             },
 
             render: function() {
+                var upp = this.state.config.pvs && this.state.config.uvs ? (this.state.config.uvs*100 / this.state.config.pvs).toFixed(2) + '%' : '0%';
                 return (
                     <div>
                         <div className="row">
@@ -59,6 +60,13 @@ Spreader.Dashboard = {
                             <div className="col-md-4">
                                 <input id="activityFilter" className="form-control col-10-10 pull-right" type="text" name="" placeholder="日推广活动" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-date-autoclose="true" />
                             </div>
+                        </div>
+                        <br />
+                        <div className="progress text-center">
+                            <div className="progress-bar progress-bar-success progress-bar-striped" style={{width: upp, 'min-width': '12em'}}>
+                                {this.state.config.uvs} Uv， {upp}
+                            </div>
+                            {this.state.config.pvs} Pv
                         </div>
                         <br />
                         <div className="row">

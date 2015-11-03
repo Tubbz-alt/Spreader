@@ -39545,6 +39545,7 @@ Spreader.Dashboard = {
             },
 
             render: function render() {
+                var upp = this.state.config.pvs && this.state.config.uvs ? (this.state.config.uvs * 100 / this.state.config.pvs).toFixed(2) + '%' : '0%';
                 return React.createElement(
                     'div',
                     null,
@@ -39595,6 +39596,20 @@ Spreader.Dashboard = {
                             { className: 'col-md-4' },
                             React.createElement('input', { id: 'activityFilter', className: 'form-control col-10-10 pull-right', type: 'text', name: '', placeholder: '日推广活动', 'data-provide': 'datepicker', 'data-date-format': 'yyyy-mm-dd', 'data-date-autoclose': 'true' })
                         )
+                    ),
+                    React.createElement('br', null),
+                    React.createElement(
+                        'div',
+                        { className: 'progress text-center' },
+                        React.createElement(
+                            'div',
+                            { className: 'progress-bar progress-bar-success progress-bar-striped', style: { width: upp, 'min-width': '12em' } },
+                            this.state.config.uvs,
+                            ' Uv， ',
+                            upp
+                        ),
+                        this.state.config.pvs,
+                        ' Pv'
                     ),
                     React.createElement('br', null),
                     React.createElement(
