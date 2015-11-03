@@ -62,6 +62,7 @@
         </div>
     </section>
     </div>
+    <footer id="footer" class="container"><p class="text-center">© 2015 XiaoGuo Technology. All Rights Reserved.</p></footer>
     <script>Spreader.init({site_url: "{{ 'http://'.$_SERVER['HTTP_HOST'] }}" })</script>
 </body>
 </html>

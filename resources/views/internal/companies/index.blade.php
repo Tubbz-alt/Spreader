@@ -30,6 +30,7 @@
                 </tbody>
             </table>
         </div>
+        {!! $companies->render() !!}
     </div>
 </div>
 @endsection

@@ -19,7 +19,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        return view('internal.companies.index')->withCompanies(Company::all());
+        return view('internal.companies.index')->withCompanies(Company::paginate(15));
     }
 
     /**

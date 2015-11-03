@@ -19,7 +19,7 @@ class AmigosController extends Controller
      */
     public function index()
     {
-        return view('internal.amigos.index')->withAmigos(Amigo::all());
+        return view('internal.amigos.index')->withAmigos(Amigo::paginate(15));
     }
 
     public function getAmigos(Request $request)

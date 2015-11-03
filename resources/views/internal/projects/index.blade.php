@@ -32,6 +32,7 @@
                 </tbody>
             </table>
         </div>
+        {!! $projects->render() !!}
     </div>
 </div>
 @endsection

@@ -19,7 +19,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return view('internal.projects.index')->withProjects(Project::all());
+        return view('internal.projects.index')->withProjects(Project::paginate(15));
     }
 
     /**

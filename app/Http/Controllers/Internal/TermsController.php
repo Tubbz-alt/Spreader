@@ -19,7 +19,7 @@ class TermsController extends Controller
      */
     public function index()
     {
-        return view('internal.terms.index')->withTerms(Term::all());
+        return view('internal.terms.index')->withTerms(Term::paginate(15));
     }
 
     public function getTerms(Request $request)
