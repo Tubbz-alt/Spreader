@@ -53,6 +53,7 @@ class PRequestLog extends Model
         }
 
         $config = [
+            'credits' => ['enabled' => false],
             'chart' => ['zoomType' => 'xy'],
             'title' => ['text' => $project->name],
             'subtitle' => ['text' => "$periodStart ~ $periodEnd Pv/Uv 投放量"],
