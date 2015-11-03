@@ -8,12 +8,14 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
+    protected $companyId = null;
     protected $project = null;
 
     public function __construct()
     {
         $user = \Auth::user();
         if ($user->role == 2) {
+            $this->companyId = $user->company_id;
             $this->project = \App\Project::where('company_id', $user->company_id)->orderBy('id', 'DESC')->first();
         } else {
             $this->project = \App\Project::orderBy('id', 'DESC')->first();
@@ -28,7 +30,7 @@ class DashboardController extends Controller
     public function index()
     {
         $config = \App\PRequestLog::highchartsConfig(date('Y-m-d', $_SERVER['REQUEST_TIME'] - 7*24*3600), date('Y-m-d', $_SERVER['REQUEST_TIME']), $this->project);
-        return view('analytics.dashboard.index')->withConfig($config);
+        return view('analytics.dashboard.index')->withConfig($config)->withProjects(\App\Project::where('company_id', $this->companyId)->orderBy('id', 'DESC')->get());
     }
 
     public function getHightChartsConfig(Request $request)

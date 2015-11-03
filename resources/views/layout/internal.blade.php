@@ -8,6 +8,7 @@
     <script src="{{ url('js/app.js') }}"></script>
 </head>
 <body>
+    <div id="wrapper">
     <nav class="navbar navbar-mast navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -55,10 +56,11 @@
             </div>
         </div>
     </nav>
-    <div class="main">
+    <section id="content">
         <div class="container">
             @yield('content')
         </div>
+    </section>
     </div>
     <script>Spreader.init({site_url: "{{ 'http://'.$_SERVER['HTTP_HOST'] }}" })</script>
 </body>

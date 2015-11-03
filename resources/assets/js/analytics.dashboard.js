@@ -63,7 +63,9 @@ Spreader.Dashboard = {
                         <br />
                         <div className="row">
                             <div className="col-md-12">
-                                <HightCharts config={this.state.config}></HightCharts>
+                                <div className="highcharts-wrapper">
+                                    <HightCharts config={this.state.config}></HightCharts>
+                                </div>
                             </div>
                         </div>
                     </div>

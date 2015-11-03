@@ -39603,7 +39603,11 @@ Spreader.Dashboard = {
                         React.createElement(
                             'div',
                             { className: 'col-md-12' },
-                            React.createElement(HightCharts, { config: this.state.config })
+                            React.createElement(
+                                'div',
+                                { className: 'highcharts-wrapper' },
+                                React.createElement(HightCharts, { config: this.state.config })
+                            )
                         )
                     )
                 );
