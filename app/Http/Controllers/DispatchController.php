@@ -24,7 +24,7 @@ class DispatchController extends Controller
         $this->dispatch(new \App\Jobs\LogRedirect($log->id));
 
         if ($project = \App\Project::find($projectId)) {
-            return redirect($project->promotion_link);
+            return redirect($project->promotion_link.(strpos($project->promotion_link, '?') ? '&' : '?').'utm_source=xgdt_t'.$taskId);
         } else {
             // Emergency
         }
